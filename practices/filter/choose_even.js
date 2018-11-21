@@ -10,19 +10,17 @@ function choose_even(collection) {
   // }
   // return result
 
-  var result = []
   for(var i=0; i<collection.length; i++){
-    if (isEven(collection[i])){
-      result.push(collection[i])
+    if (!isEven(collection[i])){
+      collection.splice(i,1)
     }
   } 
-  console.log("debug "+result)
-  return result
+  return collection
 
 }
 
 function isEven(element){
-  return element % 2 === 0;
+  return (element % 2) === 0;
 }
 
 module.exports = choose_even;
